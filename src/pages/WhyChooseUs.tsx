@@ -1,93 +1,53 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
-import whyChooseUsBg from "@/assets/why-choose-us-bg.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Users, 
-  Clock, 
-  Building, 
-  UserCheck, 
-  Code, 
-  ArrowLeft,
-  ArrowRight,
-  CheckCircle,
-  Star
-} from "lucide-react";
-
+import { Users, Clock, Building, UserCheck, Code, ArrowLeft, ArrowRight, CheckCircle, Star } from "lucide-react";
 const WhyChooseUs = () => {
-  const keyPoints = [
-    {
-      title: "Diverse Permanent Recruitment Solutions",
-      description: "Covers junior to executive hiring, with retained, contingent, and executive packages.",
-      icon: Users,
-      features: ["Junior to Executive roles", "Retained & Contingent search", "Customized packages"]
-    },
-    {
-      title: "Efficient Contract Staffing",
-      description: "Quick and compliant solutions for niche or contract roles.",
-      icon: Clock,
-      features: ["Fast turnaround time", "Compliance assured", "Niche specializations"]
-    },
-    {
-      title: "RPO, BPO, HRO Expertise",
-      description: "A dedicated team delivering strategic staffing via outsourcing models.",
-      icon: Building,
-      features: ["Recruitment Process Outsourcing", "Business Process Outsourcing", "HR Outsourcing"]
-    },
-    {
-      title: "Executive Leadership Hiring",
-      description: "Strong experience in recruiting for senior-level and board positions across sectors.",
-      icon: UserCheck,
-      features: ["C-Suite positions", "Board appointments", "Cross-sector expertise"]
-    },
-    {
-      title: "IT Domain Specialization",
-      description: "Deep placement experience from developers to C-suite roles across multiple industries.",
-      icon: Code,
-      features: ["Java developers", "Cybersecurity experts", "IT leadership roles"]
-    }
-  ];
-
-  const industries = [
-    "Retail", "Utilities", "Healthcare", "Telecommunications", "Finance", "Banking"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const keyPoints = [{
+    title: "Diverse Permanent Recruitment Solutions",
+    description: "Covers junior to executive hiring, with retained, contingent, and executive packages.",
+    icon: Users,
+    features: ["Junior to Executive roles", "Retained & Contingent search", "Customized packages"]
+  }, {
+    title: "Efficient Contract Staffing",
+    description: "Quick and compliant solutions for niche or contract roles.",
+    icon: Clock,
+    features: ["Fast turnaround time", "Compliance assured", "Niche specializations"]
+  }, {
+    title: "RPO, BPO, HRO Expertise",
+    description: "A dedicated team delivering strategic staffing via outsourcing models.",
+    icon: Building,
+    features: ["Recruitment Process Outsourcing", "Business Process Outsourcing", "HR Outsourcing"]
+  }, {
+    title: "Executive Leadership Hiring",
+    description: "Strong experience in recruiting for senior-level and board positions across sectors.",
+    icon: UserCheck,
+    features: ["C-Suite positions", "Board appointments", "Cross-sector expertise"]
+  }, {
+    title: "IT Domain Specialization",
+    description: "Deep placement experience from developers to C-suite roles across multiple industries.",
+    icon: Code,
+    features: ["Java developers", "Cybersecurity experts", "IT leadership roles"]
+  }];
+  const industries = ["Retail", "Utilities", "Healthcare", "Telecommunications", "Finance", "Banking"];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 lg:py-32 text-white overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <img 
-            src={whyChooseUsBg} 
-            alt="Professional office environment" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/85 to-primary-light/80"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 md:py-24 lg:py-32 bg-gradient-hero text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="text-center lg:text-left">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="mb-6 bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white"
-                onClick={() => window.history.back()}
-              >
+              <Button variant="outline" size="sm" className="mb-6 bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white" onClick={() => window.history.back()}>
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Home
               </Button>
               
               <div className="space-y-6">
-                <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-4">
-                  <span className="text-white text-sm font-medium">Why Choose Us</span>
-                </div>
+                
                 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                   Why Choose{" "}
@@ -105,11 +65,7 @@ const WhyChooseUs = () => {
                     Discover Our Expertise
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:text-white"
-                  >
+                  <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:text-white">
                     Contact Us Today
                   </Button>
                 </div>
@@ -171,9 +127,8 @@ const WhyChooseUs = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-12 lg:mb-16">
             {keyPoints.map((point, index) => {
-              const IconComponent = point.icon;
-              return (
-                <Card key={index} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1">
+            const IconComponent = point.icon;
+            return <Card key={index} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1">
                   <CardHeader className="pb-4">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
@@ -191,17 +146,14 @@ const WhyChooseUs = () => {
                       {point.description}
                     </p>
                     <div className="space-y-2">
-                      {point.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2">
+                      {point.features.map((feature, featureIndex) => <div key={featureIndex} className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary" />
                           <span className="text-sm text-muted-foreground">{feature}</span>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
 
           {/* Industries We Serve */}
@@ -216,14 +168,9 @@ const WhyChooseUs = () => {
             </div>
             
             <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-              {industries.map((industry, index) => (
-                <div 
-                  key={index}
-                  className="px-4 py-2 bg-primary/10 text-primary rounded-full border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
-                >
+              {industries.map((industry, index) => <div key={index} className="px-4 py-2 bg-primary/10 text-primary rounded-full border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default">
                   <span className="font-medium">{industry}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -266,8 +213,6 @@ const WhyChooseUs = () => {
       <ContactSection />
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default WhyChooseUs;

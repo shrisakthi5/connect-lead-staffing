@@ -1,11 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Target, Award } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+
 const Hero = () => {
-  return <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
+  return (
+    <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img src={heroBackground} alt="Professional business environment" className="w-full h-full object-cover" />
+        <img 
+          src={heroBackground} 
+          alt="Professional business environment" 
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary-light/70"></div>
       </div>
 
@@ -31,7 +37,19 @@ const Hero = () => {
                 Since 2018, we've been pioneering innovative human resource services, partnering with clients to fulfill business objectives—from talent attraction and recruitment to performance, retention, and succession planning.
               </p>
 
-              
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                <Button variant="hero" size="lg" className="group">
+                  Find Out More
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:text-white"
+                >
+                  Our Services
+                </Button>
+              </div>
             </div>
           </div>
 
@@ -84,6 +102,8 @@ const Hero = () => {
 
       {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
