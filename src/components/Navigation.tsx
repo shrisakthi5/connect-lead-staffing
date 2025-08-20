@@ -12,17 +12,18 @@ const Navigation = () => {
   return (
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-light rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">GL</span>
+          <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-primary to-primary-light rounded-lg flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-sm lg:text-base">GL</span>
             </div>
-            <span className="text-xl font-bold text-foreground">Global LeadConnect</span>
+            <span className="text-lg lg:text-xl font-bold text-foreground hidden sm:block">Global LeadConnect</span>
+            <span className="text-lg lg:text-xl font-bold text-foreground sm:hidden">GLC</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <Link 
               to="/" 
               className={`text-sm font-medium transition-colors hover:text-primary ${
@@ -39,7 +40,7 @@ const Navigation = () => {
             >
               Why Choose Us
             </Link>
-            <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+            <div className="hidden xl:flex items-center space-x-4 text-sm text-muted-foreground">
               <a href="tel:9342076135" className="flex items-center space-x-1 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4" />
                 <span>93420 76135</span>
@@ -54,14 +55,38 @@ const Navigation = () => {
             </Button>
           </div>
 
+          {/* Medium screens navigation */}
+          <div className="hidden md:flex lg:hidden items-center space-x-4">
+            <Link 
+              to="/" 
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isActive('/') ? 'text-primary' : 'text-muted-foreground'
+              }`}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/why-choose-us" 
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isActive('/why-choose-us') ? 'text-primary' : 'text-muted-foreground'
+              }`}
+            >
+              Why Choose Us
+            </Link>
+            <Button variant="professional" size="sm">
+              Get Started
+            </Button>
+          </div>
+
           {/* Mobile menu button */}
           <div className="md:hidden">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="h-10 w-10"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>

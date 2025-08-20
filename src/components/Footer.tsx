@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="py-8 md:py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -123,12 +123,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-primary-foreground/20">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="py-4 md:py-6 border-t border-primary-foreground/20">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-primary-foreground/60 text-sm">
               © 2020 by Global LeadConnect. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
               <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
                 Privacy Policy
               </a>
